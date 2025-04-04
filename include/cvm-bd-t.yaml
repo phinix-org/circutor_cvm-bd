@@ -1,0 +1,63 @@
+#  - platform: template
+#    name: DATE_cvm
+#    update_interval: 10s
+#    lambda: |-
+#      std::string value = "Unknown";
+#      if (id(date_mm) && !isnan(id(date_mm).state)) {
+#        int second = (int) id(date_s).state;
+#        int minute = (int) id(date_m).state;
+#        int hour = (int) id(date_h).state;
+#        int day = (int) id(date_d).state;
+#        int month = (int) id(date_mm).state;
+#        int year = (int) id(date_y).state + 2024;
+#        value = (year ? to_string(year) + "-" : "") + ((month < 10) ? "0" + to_string(month) : to_string(month)) + "-" + ((day < 10) ? "0" + to_string(day) : to_string(day)) + " " + ((hour < 10) ? "0" + to_string(hour) : to_string(hour)) + ":" + ((minute < 10) ? "0" + to_string(minute) : to_string(minute)) + ":" +  ((second < 10) ? "0" + to_string(second) : to_string(second));
+#      }
+#      return value;
+#  
+#  - platform: template
+#    name: DATE_fcvm
+#    update_interval: 10s
+#    lambda: |-
+#      std::string value = "Unknown";
+#      if (id(fdate_mm) && !isnan(id(fdate_mm).state)) {
+#        int second = (int) id(fdate_s).state;
+#        int minute = (int) id(fdate_m).state;
+#        int hour = (int) id(fdate_h).state;
+#        int day = (int) id(fdate_d).state;
+#        int month = (int) id(fdate_mm).state;
+#        int year = (int) id(fdate_y).state + 2024;
+#        value = (year ? to_string(year) + "-" : "") + ((month < 10) ? "0" + to_string(month) : to_string(month)) + "-" + ((day < 10) ? "0" + to_string(day) : to_string(day)) + " " + ((hour < 10) ? "0" + to_string(hour) : to_string(hour)) + ":" + ((minute < 10) ? "0" + to_string(minute) : to_string(minute)) + ":" +  ((second < 10) ? "0" + to_string(second) : to_string(second));
+#      }
+#      return value;
+
+ - platform: template
+   name: DATE_Ecvm
+   update_interval: 1s
+   lambda: |-
+     std::string value = "Unknown";
+     if (id(edate_mm) && !isnan(id(edate_mm).state)) {
+       int second = (int) id(edate_s).state;
+       int minute = (int) id(edate_m).state;
+       int hour = (int) id(edate_h).state;
+       int day = (int) id(edate_d).state;
+       int month = (int) id(edate_mm).state;
+       int year = (int) id(edate_y).state + 2024;
+       value = (year ? to_string(year) + "-" : "") + ((month < 10) ? "0" + to_string(month) : to_string(month)) + "-" + ((day < 10) ? "0" + to_string(day) : to_string(day)) + " " + ((hour < 10) ? "0" + to_string(hour) : to_string(hour)) + ":" + ((minute < 10) ? "0" + to_string(minute) : to_string(minute)) + ":" +  ((second < 10) ? "0" + to_string(second) : to_string(second));
+     }
+     return value;
+
+ - platform: template
+   name: DATE_Pdcvm T1
+   update_interval: 300s
+   lambda: |-
+     std::string value = "Unknown";
+     if (id(pdt1date_mm) && !isnan(id(pdt1date_mm).state)) {
+       int second = (int) id(pdt1date_s).state;
+       int minute = (int) id(pdt1date_m).state;
+       int hour = (int) id(pdt1date_h).state;
+       int day = (int) id(pdt1date_d).state;
+       int month = (int) id(pdt1date_mm).state;
+       int year = (int) id(pdt1date_y).state + 2024;
+       value = (year ? to_string(year) + "-" : "") + ((month < 10) ? "0" + to_string(month) : to_string(month)) + "-" + ((day < 10) ? "0" + to_string(day) : to_string(day)) + " " + ((hour < 10) ? "0" + to_string(hour) : to_string(hour)) + ":" + ((minute < 10) ? "0" + to_string(minute) : to_string(minute)) + ":" +  ((second < 10) ? "0" + to_string(second) : to_string(second));
+     }
+     return value;

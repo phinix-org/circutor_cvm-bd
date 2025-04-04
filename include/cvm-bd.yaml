@@ -1,0 +1,1450 @@
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "DATE_S"
+#   register_type: read
+#   address: 0x00
+# #  register_count: 61
+# #  response_size: 122
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x0000003F
+#   internal: true
+#   id: date_s
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "DATE_M"
+#   register_type: read
+#   address: 0x00
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x00000FC0
+#   internal: true
+#   id: date_m
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "DATE_H"
+#   register_type: read
+#   address: 0x00
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x0001F000
+#   internal: true
+#   id: date_h
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "DATE_D"
+#   register_type: read
+#   address: 0x00
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x003E0000
+#   internal: true
+#   id: date_d
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "DATE_MM"
+#   register_type: read
+#   address: 0x00
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x03C00000
+#   internal: true
+#   id: date_mm
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "DATE_Y"
+#   register_type: read
+#   address: 0x00
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0xFC000000
+#   internal: true
+#   id: date_y
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "V L1"
+  register_type: read
+  address: 0x02
+  unit_of_measurement: "V"
+  device_class: voltage
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "A L1"
+  register_type: read
+  address: 0x04
+  unit_of_measurement: "A"
+  device_class: current
+  state_class: measurement
+  value_type: S_DWORD
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+  
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "W L1"
+  register_type: read
+  address: 0x06
+  unit_of_measurement: "W"
+  device_class: power
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "VARL L1"
+  register_type: read
+  address: 0x08
+  unit_of_measurement: "VAR"
+  device_class: reactive_power
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "VARC L1"
+  register_type: read
+  address: 0x0A
+  unit_of_measurement: "VAR"
+  device_class: reactive_power
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "PF L1"
+  register_type: read
+  address: 0x0C
+  unit_of_measurement: ""
+  device_class: power_factor
+  state_class: measurement
+  value_type: S_DWORD
+  accuracy_decimals: 2
+  filters:
+    - multiply: 0.01
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "V L2"
+  register_type: read
+  address: 0x0E
+  unit_of_measurement: "V"
+  device_class: voltage
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "A L2"
+  register_type: read
+  address: 0x10
+  unit_of_measurement: "A"
+  device_class: current
+  state_class: measurement
+  value_type: S_DWORD
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+  
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "W L2"
+  register_type: read
+  address: 0x12
+  unit_of_measurement: "W"
+  device_class: power
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "VARL L2"
+  register_type: read
+  address: 0x14
+  unit_of_measurement: "VAR"
+  device_class: reactive_power
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "VARC L2"
+  register_type: read
+  address: 0x16
+  unit_of_measurement: "VAR"
+  device_class: reactive_power
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "PF L2"
+  register_type: read
+  address: 0x18
+  unit_of_measurement: ""
+  device_class: power_factor
+  state_class: measurement
+  value_type: S_DWORD
+  accuracy_decimals: 2
+  filters:
+    - multiply: 0.01
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "V L3"
+  register_type: read
+  address: 0x1A
+  unit_of_measurement: "V"
+  device_class: voltage
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "A L3"
+  register_type: read
+  address: 0x1C
+  unit_of_measurement: "A"
+  device_class: current
+  state_class: measurement
+  value_type: S_DWORD
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "W L3"
+  register_type: read
+  address: 0x1E
+  unit_of_measurement: "W"
+  device_class: power
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "VARL L3"
+  register_type: read
+  address: 0x20
+  unit_of_measurement: "VAR"
+  device_class: reactive_power
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "VARC L3"
+  register_type: read
+  address: 0x22
+  unit_of_measurement: "VAR"
+  device_class: reactive_power
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "PF L3"
+  register_type: read
+  address: 0x24
+  unit_of_measurement: ""
+  device_class: power_factor
+  state_class: measurement
+  value_type: S_DWORD
+  accuracy_decimals: 2
+  filters:
+    - multiply: 0.01
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "V LN III"
+  register_type: read
+  address: 0x26
+  unit_of_measurement: "V"
+  device_class: voltage
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "A III"
+  register_type: read
+  address: 0x28
+  unit_of_measurement: "A"
+  device_class: current
+  state_class: measurement
+  value_type: S_DWORD
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "W III"
+  register_type: read
+  address: 0x2A
+  unit_of_measurement: "W"
+  device_class: power
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "VARL III"
+  register_type: read
+  address: 0x2C
+  unit_of_measurement: "VAR"
+  device_class: reactive_power
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "VARC III"
+  register_type: read
+  address: 0x2E
+  unit_of_measurement: "VAR"
+  device_class: reactive_power
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "PF III"
+  register_type: read
+  address: 0x30
+  unit_of_measurement: ""
+  device_class: power_factor
+  state_class: measurement
+  value_type: S_DWORD
+  accuracy_decimals: 2
+  filters:
+    - multiply: 0.01
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "Frequency"
+  register_type: read
+  address: 0x32
+  unit_of_measurement: "Hz"
+  device_class: frequency
+  state_class: measurement
+  value_type: S_DWORD
+  accuracy_decimals: 1
+  filters:
+    - multiply: 0.1
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "VA III"
+  register_type: read
+  address: 0x34
+  unit_of_measurement: "VA"
+  device_class: apparent_power
+  state_class: measurement
+  value_type: S_DWORD
+  
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "V LL 12"
+  register_type: read
+  address: 0x36
+  unit_of_measurement: "V"
+  device_class: voltage
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "V LL 23"
+  register_type: read
+  address: 0x38
+  unit_of_measurement: "V"
+  device_class: voltage
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "V LL 31"
+  register_type: read
+  address: 0x3A
+  unit_of_measurement: "V"
+  device_class: voltage
+  value_type: S_DWORD
+  
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "V LL III"
+  register_type: read
+  address: 0x3C
+  unit_of_measurement: "V"
+  device_class: voltage
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "+Wh T1"
+  register_type: read
+  address: 0x3E
+  unit_of_measurement: "kWh"
+  device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "+VARhL T1"
+  register_type: read
+  address: 0x40
+  unit_of_measurement: "kVARh"
+ #device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+#  icon: mdi:lighting-bolt-circle
+  icon: mdi:flash
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "+VARhC T1"
+  register_type: read
+  address: 0x42
+  unit_of_measurement: "kVARh"
+ #device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+  icon: mdi:flash
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "Power Demand"
+  register_type: read
+  address: 0x44
+  unit_of_measurement: "W"    # Depend of analyzer programming: W, VA, AIII
+ #device_class: energy
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "-Wh T1"
+  register_type: read
+  address: 0x46
+  unit_of_measurement: "kWh"
+  device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "-VARhL T1"
+  register_type: read
+  address: 0x48
+  unit_of_measurement: "kVARh"
+ #device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+  icon: mdi:flash
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "-VARhC T1"
+  register_type: read
+  address: 0x4A
+  unit_of_measurement: "kVARh"
+ #device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+  icon: mdi:flash
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+#   Following registers returns:
+#   Modbus error function code: 0x4 exception: 2
+#
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "A 1"
+#   register_type: read
+#   address: 0x4C
+#   unit_of_measurement: "A"
+#   device_class: current
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "A 2"
+#   register_type: read
+#   address: 0x4E
+#   unit_of_measurement: "A"
+#   device_class: current
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "A 3"
+#   register_type: read
+#   address: 0x50
+#   unit_of_measurement: "A"
+#   device_class: current
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Empty 0"
+#   register_type: read
+#   address: 0x52
+#   unit_of_measurement: ""
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "THD V1"
+#   register_type: read
+#   address: 0x54
+#   unit_of_measurement: ""
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "THD V2"
+#   register_type: read
+#   address: 0x56
+#   unit_of_measurement: ""
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "THD V3"
+#   register_type: read
+#   address: 0x58
+#   unit_of_measurement: ""
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "THD A1"
+#   register_type: read
+#   address: 0x5A
+#   unit_of_measurement: ""
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "THD A2"
+#   register_type: read
+#   address: 0x5C
+#   unit_of_measurement: ""
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "THD A3"
+#   register_type: read
+#   address: 0x5E
+#   unit_of_measurement: ""
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Empty 1"
+#   register_type: read
+#   address: 0x60
+#   unit_of_measurement: ""
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Empty 2"
+#   register_type: read
+#   address: 0x62
+#   unit_of_measurement: ""
+#   state_class: measurement
+#   value_type: S_DWORD
+
+# # This sensor will be not used now
+# #
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "FDATE_S"
+#   register_type: read
+#   address: 0x64
+# #  register_count: 61
+# #  response_size: 122
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x0000003F
+# #  internal: true
+#   id: fdate_s
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "FDATE_M"
+#   register_type: read
+#   address: 0x64
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x00000FC0
+#   internal: true
+#   id: fdate_m
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "FDATE_H"
+#   register_type: read
+#   address: 0x64
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x0001F000
+#   internal: true
+#   id: fdate_h
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "FDATE_D"
+#   register_type: read
+#   address: 0x64
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x003E0000
+#   internal: true
+#   id: fdate_d
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "FDATE_MM"
+#   register_type: read
+#   address: 0x64
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x03C00000
+#   internal: true
+#   id: fdate_mm
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+# #  name: "FDATE_Y"
+#   register_type: read
+#   address: 0x64
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0xFC000000
+#   internal: true
+#   id: fdate_y
+
+# register 0x66 to 0x8A duplicates 0x02 t0 0x4A, looks not required
+#
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "V 12"
+#   register_type: read
+#   address: 0x66
+#   unit_of_measurement: "V"
+#   device_class: voltage
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "V 23"
+#   register_type: read
+#   address: 0x68
+#   unit_of_measurement: "V"
+#   device_class: voltage
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "V 31"
+#   register_type: read
+#   address: 0x6A
+#   unit_of_measurement: "V"
+#   device_class: voltage
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "V 1"
+#   register_type: read
+#   address: 0x6C
+#   unit_of_measurement: "V"
+#   device_class: voltage
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "V 2"
+#   register_type: read
+#   address: 0x6E
+#   unit_of_measurement: "V"
+#   device_class: voltage
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "V 3"
+#   register_type: read
+#   address: 0x70
+#   unit_of_measurement: "V"
+#   device_class: voltage
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "A 1"
+#   register_type: read
+#   address: 0x72
+#   unit_of_measurement: "A"
+#   device_class: current
+#   state_class: measurement
+#   value_type: S_DWORD
+#   accuracy_decimals: 3
+#   filters:
+#     - multiply: 0.001
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "A 2"
+#   register_type: read
+#   address: 0x74
+#   unit_of_measurement: "A"
+#   device_class: current
+#   state_class: measurement
+#   value_type: S_DWORD
+#   accuracy_decimals: 3
+#   filters:
+#     - multiply: 0.001
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "A 3"
+#   register_type: read
+#   address: 0x76
+#   unit_of_measurement: "A"
+#   device_class: current
+#   state_class: measurement
+#   value_type: S_DWORD
+#   accuracy_decimals: 3
+#   filters:
+#     - multiply: 0.001
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "W 1"
+#   register_type: read
+#   address: 0x78
+#   unit_of_measurement: "W"
+#   device_class: power
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "W 2"
+#   register_type: read
+#   address: 0x7A
+#   unit_of_measurement: "W"
+#   device_class: power
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "W 3"
+#   register_type: read
+#   address: 0x7C
+#   unit_of_measurement: "W"
+#   device_class: power
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "VARL 1"
+#   register_type: read
+#   address: 0x7E
+#   unit_of_measurement: "VAR"
+#   device_class: reactive_power
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "VARL 2"
+#   register_type: read
+#   address: 0x80
+#   unit_of_measurement: "VAR"
+#   device_class: reactive_power
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "VARL 3"
+#   register_type: read
+#   address: 0x82
+#   unit_of_measurement: "VAR"
+#   device_class: reactive_power
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "+Wh Tr1"
+#   register_type: read
+#   address: 0x84
+#   unit_of_measurement: "kWh"
+#   device_class: energy
+#   state_class: total_increasing
+#   value_type: S_DWORD
+#   accuracy_decimals: 3
+#   filters:
+#     - multiply: 0.001
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "+VARhL Tr1"
+#   register_type: read
+#   address: 0x86
+#   unit_of_measurement: "kVARh"
+#  #device_class: energy
+#   state_class: total_increasing
+#   value_type: S_DWORD
+#   icon: mdi:flash
+#   accuracy_decimals: 3
+#   filters:
+#     - multiply: 0.001
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "-Wh Tr1"
+#   register_type: read
+#   address: 0x88
+#   unit_of_measurement: "kWh"
+#   device_class: energy
+#   state_class: total_increasing
+#   value_type: S_DWORD
+#   accuracy_decimals: 3
+#   filters:
+#     - multiply: 0.001
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "-VARhL Tr1"
+#   register_type: read
+#   address: 0x8A
+#   unit_of_measurement: "kVARh"
+#  #device_class: energy
+#   state_class: total_increasing
+#   value_type: S_DWORD
+#   icon: mdi:flash
+#   accuracy_decimals: 3
+#   filters:
+#     - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "EDATE_S"
+  register_type: read
+  address: 0xC8
+#  register_count: 61
+#  response_size: 122
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0x0000003F
+  internal: true
+  id: edate_s
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "EDATE_M"
+  register_type: read
+  address: 0xC8
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0x00000FC0
+  internal: true
+  id: edate_m
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "EDATE_H"
+  register_type: read
+  address: 0xC8
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0x0001F000
+  internal: true
+  id: edate_h
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "EDATE_D"
+  register_type: read
+  address: 0xC8
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0x003E0000
+  internal: true
+  id: edate_d
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "EDATE_MM"
+  register_type: read
+  address: 0xC8
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0x03C00000
+  internal: true
+  id: edate_mm
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "EDATE_Y"
+  register_type: read
+  address: 0xC8
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0xFC000000
+  internal: true
+  id: edate_y
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "E +Wh T1"
+  register_type: read
+  address: 0xCA
+  unit_of_measurement: "kWh"
+  device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "E +VARhL T1"
+  register_type: read
+  address: 0xCC
+  unit_of_measurement: "kVARh"
+ #device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+  icon: mdi:flash
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "E +VARhC T1"
+  register_type: read
+  address: 0xCE
+  unit_of_measurement: "kVARh"
+ #device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+  icon: mdi:flash
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "E -Wh T1"
+  register_type: read
+  address: 0xD0
+  unit_of_measurement: "kWh"
+  device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "E -VARhL T1"
+  register_type: read
+  address: 0xD2
+  unit_of_measurement: "kVARh"
+ #device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+  icon: mdi:flash
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "E -VARhC T1"
+  register_type: read
+  address: 0xD4
+  unit_of_measurement: "kVARh"
+ #device_class: energy
+  state_class: total_increasing
+  value_type: S_DWORD
+  icon: mdi:flash
+  accuracy_decimals: 3
+  filters:
+    - multiply: 0.001
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "Pd DATE_S T1"
+  register_type: read
+  address: 0xD6
+#  register_count: 61
+#  response_size: 122
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0x0000003F
+  internal: true
+  id: pdt1date_s
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "Pd EDATE_M T1"
+  register_type: read
+  address: 0xD6
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0x00000FC0
+  internal: true
+  id: pdt1date_m
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "Pd EDATE_H T1"
+  register_type: read
+  address: 0xD6
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0x0001F000
+  internal: true
+  id: pdt1date_h
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "Pd EDATE_D T1"
+  register_type: read
+  address: 0xD6
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0x003E0000
+  internal: true
+  id: pdt1date_d
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "Pd EDATE_MM T1"
+  register_type: read
+  address: 0xD6
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0x03C00000
+  internal: true
+  id: pdt1date_mm
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+#  name: "Pd EDATE_Y T1"
+  register_type: read
+  address: 0xD6
+  unit_of_measurement: ""
+  value_type: U_DWORD
+  bitmask: 0xFC000000
+  internal: true
+  id: pdt1date_y
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "Power Demand Max T1"
+  register_type: read
+  address: 0xD8
+  unit_of_measurement: "W"    # Depend of analyzer programming: W, VA, AIII
+ #device_class: energy
+  state_class: measurement
+  value_type: S_DWORD
+
+- platform: modbus_controller
+  modbus_controller_id: ${modbus_contr_id}
+  name: "Power Demand Last T1"
+  register_type: read
+  address: 0xDA
+  unit_of_measurement: "W"    # Depend of analyzer programming: W, VA, AIII
+ #device_class: energy
+  state_class: measurement
+  value_type: S_DWORD
+
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E +Wh T2"
+#   register_type: read
+#   address: 0xDC
+#   unit_of_measurement: "Wh"
+#   device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E +VARhL T2"
+#   register_type: read
+#   address: 0xDE
+#   unit_of_measurement: "VARh"
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E +VARhC T2"
+#   register_type: read
+#   address: 0xE0
+#   unit_of_measurement: "VARh"
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E -Wh T2"
+#   register_type: read
+#   address: 0xE2
+#   unit_of_measurement: "Wh"
+#   device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E -VARhL T2"
+#   register_type: read
+#   address: 0xE4
+#   unit_of_measurement: "VARh"
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E -VARhC T2"
+#   register_type: read
+#   address: 0xE6
+#   unit_of_measurement: "VARh"
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd DATE_S T2"
+#   register_type: read
+#   address: 0xE8
+# #  register_count: 61
+# #  response_size: 122
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x0000003F
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd EDATE_M T2"
+#   register_type: read
+#   address: 0xE8
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x00000FC0
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd EDATE_H T1"
+#   register_type: read
+#   address: 0xE8
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x0001F000
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd EDATE_D T2"
+#   register_type: read
+#   address: 0xE8
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x003E0000
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd EDATE_MM T2"
+#   register_type: read
+#   address: 0xE8
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x03C00000
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd EDATE_Y T2"
+#   register_type: read
+#   address: 0xE8
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0xFC000000
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Power Demand Max T2"
+#   register_type: read
+#   address: 0xEA
+#   unit_of_measurement: "W"    # Depend of analyzer programming: W, VA, AIII
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Power Demand Last T2"
+#   register_type: read
+#   address: 0xEC
+#   unit_of_measurement: "W"    # Depend of analyzer programming: W, VA, AIII
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E +Wh T3"
+#   register_type: read
+#   address: 0xEE
+#   unit_of_measurement: "Wh"
+#   device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E +VARhL T3"
+#   register_type: read
+#   address: 0xF0
+#   unit_of_measurement: "VARh"
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E +VARhC T3"
+#   register_type: read
+#   address: 0xF2
+#   unit_of_measurement: "VARh"
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E -Wh T3"
+#   register_type: read
+#   address: 0xF4
+#   unit_of_measurement: "Wh"
+#   device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E -VARhL T3"
+#   register_type: read
+#   address: 0xF6
+#   unit_of_measurement: "VARh"
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "E -VARhC T3"
+#   register_type: read
+#   address: 0xF8
+#   unit_of_measurement: "VARh"
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd DATE_S T3"
+#   register_type: read
+#   address: 0xFA
+# #  register_count: 61
+# #  response_size: 122
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x0000003F
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd EDATE_M T3"
+#   register_type: read
+#   address: 0xFA
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x00000FC0
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd EDATE_H T3"
+#   register_type: read
+#   address: 0xFA
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x0001F000
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd EDATE_D T3"
+#   register_type: read
+#   address: 0xFA
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x003E0000
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd EDATE_MM T3"
+#   register_type: read
+#   address: 0xFA
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0x03C00000
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Pd EDATE_Y T3"
+#   register_type: read
+#   address: 0xFA
+#   unit_of_measurement: ""
+#   value_type: U_DWORD
+#   bitmask: 0xFC000000
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Power Demand Max T3"
+#   register_type: read
+#   address: 0xFC
+#   unit_of_measurement: "W"    # Depend of analyzer programming: W, VA, AIII
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Power Demand Last T3"
+#   register_type: read
+#   address: 0xFE
+#   unit_of_measurement: "W"    # Depend of analyzer programming: W, VA, AIII
+#  #device_class: energy
+#   state_class: measurement
+#   value_type: S_DWORD
+
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Test 88"
+#   register_type: read
+#   address: 0x88
+#   value_type: S_DWORD
+# #  register_count: 1
+# #  response_size: 2
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Test 5C"
+#   register_type: read
+#   address: 0x5C
+#   value_type: S_DWORD
+#   register_count: 1
+#   response_size: 2
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Test 8C"
+#   register_type: read
+#   address: 0x8C
+#   value_type: U_WORD
+#   register_count: 1
+#   response_size: 2
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Test C8"
+#   register_type: read
+#   address: 0xC8
+#   value_type: S_DWORD
+#   register_count: 1
+#   response_size: 2
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Test AA"
+#   register_type: read
+#   address: 0xDA
+#   value_type: S_DWORD
+#   register_count: 1
+#   response_size: 2
+# 
+# - platform: modbus_controller
+#   modbus_controller_id: ${modbus_contr_id}
+#   name: "Test FF"
+#   register_type: read
+#   address: 0xFF
+#   value_type: S_DWORD
+#   register_count: 1
+#   response_size: 2
